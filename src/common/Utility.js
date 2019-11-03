@@ -1,12 +1,4 @@
-import React, { useEffect } from "react";
-
-
-// Fetch shader code as string
-export async function fetchShaderText(path) {
-  const response = await fetch(path);
-  const text = await response.text();
-  return text;
-};
+import { useEffect } from "react";
 
 
 export function useAsyncEffect(asyncFunc, deps) {
@@ -17,6 +9,15 @@ export function useAsyncEffect(asyncFunc, deps) {
   }, deps)
 }
 
+
+// Fetch shader code as string
+export async function fetchShaderText(path) {
+  const response = await fetch(path);
+  const text = await response.text();
+  return text;
+};
+
+
 export function createShaderProgram(gl, vertText, fragText) {
   // Compile Vertex Shader
   const vertexShader = gl.createShader(gl.VERTEX_SHADER);
@@ -25,6 +26,7 @@ export function createShaderProgram(gl, vertText, fragText) {
   if (!gl.getShaderParameter(vertexShader, gl.COMPILE_STATUS)) {
     return null;
   }
+
   // Compile Fragment Shader
   const fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
   gl.shaderSource(fragmentShader, fragText);

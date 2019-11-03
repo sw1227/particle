@@ -1,5 +1,5 @@
 import React from "react";
-import { useAsyncEffect } from "./Util";
+import { useAsyncEffect } from "../../common/utility";
 import Wind from "./Wind";
 
 

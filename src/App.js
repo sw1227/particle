@@ -12,7 +12,7 @@ const AppRouter = () => (
   <Router>
     <Route path="/" exact component={Hello} />
     <Route path="/simple" exact component={SimpleWebGL} />
-    <Route path="/render" exact component={Render} />
+    <Route path="/wind" exact component={Render} />
   </Router>
 );
 

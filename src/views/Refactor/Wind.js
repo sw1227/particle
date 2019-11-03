@@ -1,9 +1,6 @@
-import {
-  fetchShaderText,
-  Program,
-  FrameBuffer,
-  Texture,
-} from "./Util";
+import { fetchShaderText } from "../../common/utility"
+import { Program, FrameBuffer, Texture } from "../../common/gl_wrapper";
+
 
 const SHADER_PATH = {
   drawVert: "/windShaders/draw.vert",
