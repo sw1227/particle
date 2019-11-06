@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import {
   useAsyncEffect,
   createShaderProgram,
   fetchShaderText,
-} from "../common/Utility";
+} from "../common/utility";
 
 const SHADER_PATH = {
   frag: "/simple/simple.frag",
@@ -61,7 +61,7 @@ const SimpleWebGL = () => {
     // Animate by providing current time
     const u_time = gl.getUniformLocation(program, "u_time");
     const loop = () => {
-      const frame = requestAnimationFrame(loop);
+      requestAnimationFrame(loop);
       const t = performance.now() / 1000;
 
       gl.uniform1f(u_time, t);
